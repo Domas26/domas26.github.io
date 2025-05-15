@@ -2,151 +2,87 @@
 <html lang="lt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Žemėlapių svetainė</title>
-  <style>
-    body {
-      font-family: 'Times New Roman', Times, serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      box-sizing: border-box;
-
-      background-image: url('https://www.worldatlas.com/upload/73/72/53/feature.jpg');
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: inherit;
-    }
-
-    main {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: #000;
-      margin-bottom: 30px;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #fff;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #000;
-      margin-bottom: 20px;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #fff;
-    }
-
-    .map-container {
-      max-width: 1000px;
-      margin: 40px auto;
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .map-container:hover {
-      transform: translateY(-10px);
-    }
-
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 8px;
-    }
-
-    .description {
-      margin-top: 15px;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    .fullview-button {
-      margin-top: 20px;
-    }
-
-    .fullview-button a {
-      display: inline-block;
-      padding: 12px 25px;
-      background-color: #FF6F00;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .fullview-button a:hover {
-      background-color: #E65100;
-    }
-
-    @media (max-width: 768px) {
-      h2 {
-        font-size: 1.5rem;
-      }
-
-      .map-container {
-        padding: 20px;
-      }
-
-      iframe {
-        height: 400px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <main>
-    <h1>Žemėlapių svetainė</h1>
+<header>
+  <div class="header-inner">
+    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Žemėlapio logo" class="logo" />
+    <h1>Mano Žemėlapių Svetainė</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html" class="active">Pradžia</a></li>
+        <li><a href="contact.html">Kontaktai</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <h2>Svetainės pristatymas</h2>
+    <p>
+      Ši svetainė skirta pristatyti interaktyvius žemėlapius ir svarbią informaciją apie Lietuvos teritoriją.
+      Čia rasite eismo įvykių duomenis, gamtos išteklius ir gyventojų problemas bei pasiūlymus.
+    </p>
+  </section>
+
+  <section class="info-sections">
+    <article class="info-block">
+      <img src="https://cdn.pixabay.com/photo/2016/02/19/11/30/map-1209430_1280.jpg" alt="Žemėlapio pavyzdys" />
+      <h3>Interaktyvūs žemėlapiai</h3>
+      <p>Modernūs žemėlapiai su įvairiais sluoksniais ir duomenimis.</p>
+    </article>
+
+    <article class="info-block">
+      <img src="https://cdn.pixabay.com/photo/2017/02/01/22/02/lithuania-2033677_1280.jpg" alt="Lietuvos gamta" />
+      <h3>Gamta ir aplinka</h3>
+      <p>Informacija apie gamtos išteklius ir jų apsaugą.</p>
+    </article>
+
+    <article class="info-block">
+      <img src="https://cdn.pixabay.com/photo/2018/07/28/21/06/city-3568805_1280.jpg" alt="Gyventojų problemos" />
+      <h3>Gyventojų pasiūlymai</h3>
+      <p>Platforma problemoms ir pasiūlymams spręsti.</p>
+    </article>
+  </section>
+
+  <section class="maps-section">
+    <h2>Žemėlapiai</h2>
 
     <div class="map-container">
-      <h2>Žemėlapis 1</h2>
+      <h3>Žemėlapis 1</h3>
       <iframe src="https://domas26.github.io/1_praktinis/map_1.html" title="Žemėlapis 1"></iframe>
-      <div class="description">
-        Žemėlapyje rodomi 2023 metais įvykę eismo įvykiai bei gyventojų skaičius įvairiose vietovėse.
-      </div>
-      <div class="fullview-button">
-        <a href="https://domas26.github.io/1_praktinis/map_1.html" target="_blank">Peržiūrėti visame lange</a>
-      </div>
+      <p>Rodo 2023 metų eismo įvykius ir gyventojų skaičių.</p>
+      <a href="https://domas26.github.io/1_praktinis/map_1.html" target="_blank" class="btn">Peržiūrėti visame lange</a>
     </div>
 
     <div class="map-container">
-      <h2>Žemėlapis 2</h2>
+      <h3>Žemėlapis 2</h3>
       <iframe src="https://domas26.github.io/2_praktinis/" title="Žemėlapis 2"></iframe>
-      <div class="description">
-        Šiame žemėlapyje pateikiami Molėtų ežeryno batimetrijos duomenys bei kirtimų skaičius konkrečiose savivaldybėse.
-      </div>
-      <div class="fullview-button">
-        <a href="https://domas26.github.io/2_praktinis/" target="_blank">Peržiūrėti visame lange</a>
-      </div>
+      <p>Molėtų ežeryno batimetrijos duomenys ir kirtimai savivaldybėse.</p>
+      <a href="https://domas26.github.io/2_praktinis/" target="_blank" class="btn">Peržiūrėti visame lange</a>
     </div>
 
     <div class="map-container">
-      <h2>Žemėlapis 3</h2>
+      <h3>Žemėlapis 3</h3>
       <iframe src="https://domas26.github.io/3_praktinis/" title="Žemėlapis 3"></iframe>
-      <div class="description">
-        Tai gyventojų pasiūlymų ir problemų aplikacija, kurioje vaizduojami pasiūlymai sutvarkyti konkrečią vietą bei gyventojų pranešimai apie konkrečios vietos taršą.
-      </div>
-      <div class="fullview-button">
-        <a href="https://domas26.github.io/3_praktinis/" target="_blank">Peržiūrėti visame lange</a>
-      </div>
+      <p>Gyventojų pasiūlymų ir problemų aplikacija.</p>
+      <a href="https://domas26.github.io/3_praktinis/" target="_blank" class="btn">Peržiūrėti visame lange</a>
     </div>
 
-  </main>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Domas26 | <a href="index.html">Pradžia</a> | <a href="contact.html">Kontaktai</a></p>
+  <p>Sukūrimo data: 2025-05-15</p>
+</footer>
 
 </body>
 </html>
