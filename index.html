@@ -2,150 +2,80 @@
 <html lang="lt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Žemėlapių svetainė</title>
-  <style>
-    body {
-      font-family: 'Times New Roman', Times, serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      box-sizing: border-box;
-
-      background-image: url('https://www.worldatlas.com/upload/73/72/53/feature.jpg');
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: inherit;
-    }
-
-    main {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: #000;
-      margin-bottom: 30px;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #fff;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #000;
-      margin-bottom: 20px;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #fff;
-    }
-
-    .map-container {
-      max-width: 1000px;
-      margin: 40px auto;
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .map-container:hover {
-      transform: translateY(-10px);
-    }
-
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 8px;
-    }
-
-    .description {
-      margin-top: 15px;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    .fullview-button {
-      margin-top: 20px;
-    }
-
-    .fullview-button a {
-      display: inline-block;
-      padding: 12px 25px;
-      background-color: #FF6F00;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .fullview-button a:hover {
-      background-color: #E65100;
-    }
-
-    @media (max-width: 768px) {
-      h2 {
-        font-size: 1.5rem;
-      }
-
-      .map-container {
-        padding: 20px;
-      }
-
-      iframe {
-        height: 400px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <main>
+  <header class="app-header">
     <h1>Žemėlapių svetainė</h1>
+    <nav class="nav-links">
+      <button onclick="showMap('map1')">Žemėlapis 1</button>
+      <button onclick="showMap('map2')">Žemėlapis 2</button>
+      <button onclick="showMap('map3')">Žemėlapis 3</button>
+      <button onclick="showContacts()">Kontaktai</button>
+    </nav>
+  </header>
 
-    <div class="map-container">
+  <section class="intro">
+    <h2>Apie svetainę</h2>
+    <p>
+      Šioje svetainėje pateikiami trys interaktyvūs žemėlapiai su skirtinga informacija apie eismo įvykius, kirtimus ir gyventojų skaičių. 
+    </p>
+  </section>
+
+  <main class="maps-section">
+    <!-- Žemėlapis 1 -->
+    <div class="map-container" id="map1">
       <h2>Žemėlapis 1</h2>
+      <p class="map-description">Žemėlapyje vaizduojami 2023 metais padaryti eismo įvykiai bei gyventojų skaičius</p>
       <iframe src="https://domas26.github.io/1_praktinis/map_1.html" title="Žemėlapis 1"></iframe>
-      <div class="description">
-        Žemėlapyje rodomi 2023 metais įvykę eismo įvykiai bei gyventojų skaičius įvairiose vietovėse.
-      </div>
-      <div class="fullview-button">
-        <a href="https://domas26.github.io/1_praktinis/map_1.html" target="_blank" rel="noopener noreferrer">Peržiūrėti visame lange</a>
-      </div>
+      <a href="https://domas26.github.io/1_praktinis/map_1.html" target="_blank" class="btn">Peržiūrėti visame lange</a>
     </div>
 
-    <div class="map-container">
+    <!-- Žemėlapis 2 -->
+    <div class="map-container" id="map2" style="display:none;">
       <h2>Žemėlapis 2</h2>
+      <p class="map-description">Žemėlapyje vaizduojamas kirtimų skaičius bei Molėtų ežeryno batimetrija</p>
       <iframe src="https://domas26.github.io/2_praktinis/" title="Žemėlapis 2"></iframe>
-      <div class="description">
-        Šiame žemėlapyje pateikiami Molėtų ežeryno batimetrijos duomenys bei kirtimų skaičius konkrečiose savivaldybėse.
-      </div>
-      <div class="fullview-button">
-        <a href="https://domas26.github.io/2_praktinis/" target="_blank" rel="noopener noreferrer">Peržiūrėti visame lange</a>
-      </div>
+      <a href="https://domas26.github.io/2_praktinis/" target="_blank" class="btn">Peržiūrėti visame lange</a>
     </div>
 
-    <div class="map-container">
+    <!-- Žemėlapis 3 -->
+    <div class="map-container" id="map3" style="display:none;">
       <h2>Žemėlapis 3</h2>
+      <p class="map-description">Žemėlapyje pateikiama gyventojų pasiūlymų ir problemų aplikacija</p>
       <iframe src="https://domas26.github.io/3_praktinis/" title="Žemėlapis 3"></iframe>
-      <div class="description">
-        Tai gyventojų pasiūlymų ir problemų aplikacija, kurioje vaizduojami pasiūlymai sutvarkyti konkrečią vietą bei gyventojų pranešimai apie konkrečios vietos taršą.
-      </div>
-      <div class="fullview-button">
-        <a href="https://domas26.github.io/3_praktinis/" target="_blank" rel="noopener noreferrer">Peržiūrėti visame lange</a>
-      </div>
+      <a href="https://domas26.github.io/3_praktinis/" target="_blank" class="btn">Peržiūrėti visame lange</a>
+    </div>
+
+    <!-- Kontaktų sekcija -->
+    <div class="map-container" id="contacts" style="display:none;">
+      <h2>Kontaktai</h2>
+      <p><strong>El. paštas:</strong> info@zemelapiu-svetaine.lt</p>
+      <p><strong>Telefonas:</strong> +370 612 34567</p>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScorrect_google_form_link_here/viewform?embedded=true" title="Kontaktų forma" style="width:100%; height:600px; border:none; border-radius:20px;"></iframe>
     </div>
   </main>
+
+  <footer>
+    &copy; 2025 Žemėlapių svetainė
+  </footer>
+
+  <script>
+    function showMap(id) {
+      const sections = ['map1', 'map2', 'map3', 'contacts'];
+      sections.forEach(section => {
+        document.getElementById(section).style.display = (section === id) ? 'block' : 'none';
+      });
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+
+    function showContacts() {
+      showMap('contacts');
+    }
+  </script>
 
 </body>
 </html>
