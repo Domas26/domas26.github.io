@@ -1,3 +1,3 @@
-# Domas26.github.io
+# domas26.github.io
 Žemėlapių svetainė 
 
