@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Žemėlapių svetainė</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>Žemėlapių svetainė</h1>
+    <nav class="nav-links">
+      <button onclick="showMap('map1')">Žemėlapis 1</button>
+      <button onclick="showMap('map2')">Žemėlapis 2</button>
+      <button onclick="showMap('map3')">Žemėlapis 3</button>
+      <button onclick="showContacts()">Kontaktai</button>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h2>Apie svetainę</h2>
+    <p>
+      Šioje svetainėje pateikiami trys interaktyvūs žemėlapiai su skirtinga informacija apie eismo įvykius, kirtimus ir gyventojų skaičių. 
+    </p>
+  </section>
+
+  <main class="maps-section">
+    <!-- Žemėlapis 1 -->
+    <div class="map-container" id="map1">
+      <h2>Žemėlapis 1</h2>
+      <p class="map-description">Žemėlapyje vaizduojami 2023 metais padaryti eismo įvykiai bei gyventojų skaičius</p>
+      <iframe src="https://domas26.github.io/1_praktinis/map_1.html" title="Žemėlapis 1"></iframe>
+      <a href="https://domas26.github.io/1_praktinis/map_1.html" target="_blank" class="btn">Peržiūrėti visame lange</a>
+    </div>
+
+    <!-- Žemėlapis 2 -->
+    <div class="map-container" id="map2" style="display:none;">
+      <h2>Žemėlapis 2</h2>
+      <p class="map-description">Žemėlapyje vaizduojamas kirtimų skaičius bei Molėtų ežeryno batimetrija</p>
+      <iframe src="https://domas26.github.io/2_praktinis/" title="Žemėlapis 2"></iframe>
+      <a href="https://domas26.github.io/2_praktinis/" target="_blank" class="btn">Peržiūrėti visame lange</a>
+    </div>
+
+    <!-- Žemėlapis 3 -->
+    <div class="map-container" id="map3" style="display:none;">
+      <h2>Žemėlapis 3</h2>
+      <p class="map-description">Žemėlapyje pateikiama gyventojų pasiūlymų ir problemų aplikacija</p>
+      <iframe src="https://domas26.github.io/3_praktinis/" title="Žemėlapis 3"></iframe>
+      <a href="https://domas26.github.io/3_praktinis/" target="_blank" class="btn">Peržiūrėti visame lange</a>
+    </div>
+
+    <!-- Kontaktų sekcija -->
+    <div class="map-container" id="contacts" style="display:none;">
+      <h2>Kontaktai</h2>
+      <p><strong>El. paštas:</strong> info@zemelapiu-svetaine.lt</p>
+      <p><strong>Telefonas:</strong> +370 612 34567</p>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScorrect_google_form_link_here/viewform?embedded=true" title="Kontaktų forma" style="width:100%; height:600px; border:none; border-radius:20px;"></iframe>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Žemėlapių svetainė
+  </footer>
+
+  <script>
+    function showMap(id) {
+      const sections = ['map1', 'map2', 'map3', 'contacts'];
+      sections.forEach(section => {
+        document.getElementById(section).style.display = (section === id) ? 'block' : 'none';
+      });
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+
+    function showContacts() {
+      showMap('contacts');
+    }
+  </script>
+
+</body>
+</html>

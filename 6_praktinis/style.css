@@ -1,0 +1,184 @@
+/* Bendras stilius ir fono nustatymai */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://www.worldatlas.com/upload/73/72/53/feature.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Box model */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Header */
+.app-header {
+  background-color: rgba(40, 44, 52, 0.9);
+  padding: 20px;
+  color: white;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+/* Navigacijos mygtukai */
+.nav-links {
+  margin-top: 15px;
+}
+
+.nav-links button {
+  background-color: #ff6f00;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  margin: 5px 8px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links button:hover,
+.nav-links button:focus {
+  background-color: #e65100;
+  outline: none;
+}
+
+/* Įžanga */
+.intro {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Pagrindinė žemėlapių sekcija */
+.maps-section {
+  max-width: 1000px;
+  margin: 40px auto 60px;
+  padding: 30px 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+}
+
+/* Žemėlapių konteineriai */
+.map-container {
+  background-color: #fff;
+  padding: 25px;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.map-container:hover {
+  transform: translateY(-10px);
+}
+
+/* Žemėlapių pavadinimai */
+.map-container h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #222;
+  text-align: center;
+}
+
+/* Žemėlapių aprašymai */
+.map-description {
+  font-style: italic;
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* iframe žemėlapiai */
+iframe {
+  width: 100%;
+  height: 550px;
+  border: none;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+/* Mygtukai "Peržiūrėti visame lange" */
+.btn {
+  display: inline-block;
+  background-color: #ff6f00;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  width: max-content;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #e65100;
+  outline: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: rgba(40, 44, 52, 0.9);
+  color: white;
+  font-size: 1rem;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .map-container {
+    padding: 20px 15px;
+  }
+
+  iframe {
+    height: 400px;
+  }
+
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .nav-links button {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
