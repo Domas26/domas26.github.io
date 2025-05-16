@@ -48,13 +48,29 @@ main {
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
 iframe {
   width: 100%;
-  height: 500px;
+  height: 600px;
   border: none;
   border-radius: 10px;
+}
+
+.open-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 16px;
+  background-color: #42a5f5;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.open-btn:hover {
+  background-color: #1e88e5;
 }
 
 h1, h2 {
