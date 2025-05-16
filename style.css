@@ -1,0 +1,86 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-image: url('https://www.worldatlas.com/upload/73/72/53/feature.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.app-header {
+  background-color: rgba(40, 44, 52, 0.9);
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.nav-buttons {
+  margin-top: 10px;
+}
+
+.nav-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #ffa726;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-buttons button:hover {
+  background-color: #fb8c00;
+}
+
+main {
+  padding: 40px 20px;
+}
+
+.map-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 10px;
+}
+
+.open-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 16px;
+  background-color: #42a5f5;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.open-btn:hover {
+  background-color: #1e88e5;
+}
+
+h1, h2 {
+  text-shadow: 1px 1px 2px #fff;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(40, 44, 52, 0.9);
+  color: white;
+  margin-top: 40px;
+}
