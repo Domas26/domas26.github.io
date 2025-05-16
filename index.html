@@ -10,60 +10,56 @@
 
   <header class="app-header">
     <h1>Žemėlapių svetainė</h1>
-    <nav>
-      <button onclick="showMap('map1')">Žemėlapis 1</button>
-      <button onclick="showMap('map2')">Žemėlapis 2</button>
-      <button onclick="showMap('map3')">Žemėlapis 3</button>
-      <button onclick="showMap('contact')">Kontaktai</button>
+    <nav class="nav-buttons">
+      <button onclick="showSection('map1')">Žemėlapis 1</button>
+      <button onclick="showSection('map2')">Žemėlapis 2</button>
+      <button onclick="showSection('map3')">Žemėlapis 3</button>
+      <button onclick="showSection('contact')">Kontaktai</button>
     </nav>
   </header>
 
   <main>
-    <!-- Žemėlapis 1 -->
-    <div class="map-container" id="map1">
+    <section id="map1" class="map-section">
       <h2>Žemėlapis 1</h2>
-      <p class="map-description">Žemėlapyje vaizduojami 2023 padaryti eismo įvykiai bei gyventojų skaičius</p>
+      <p>Žemėlapyje vaizduojami 2023 padaryti eismo įvykiai bei gyventojų skaičius.</p>
       <iframe src="https://domas26.github.io/1_praktinis/map_1.html" title="Žemėlapis 1"></iframe>
-      <a href="https://domas26.github.io/1_praktinis/map_1.html" target="_blank" class="btn">Peržiūrėti visame lange</a>
-    </div>
+    </section>
 
-    <!-- Žemėlapis 2 -->
-    <div class="map-container" id="map2" style="display: none;">
+    <section id="map2" class="map-section" style="display:none;">
       <h2>Žemėlapis 2</h2>
-      <p class="map-description">Žemėlapyje vaizduojamas kirtimų skaičius bei Molėtų ežeryno batimetrija</p>
-      <iframe src="https://domas26.github.io/2_praktinis/" title="Žemėlapis 2" style="height: 700px;"></iframe>
-      <a href="https://domas26.github.io/2_praktinis/" target="_blank" class="btn">Peržiūrėti visame lange</a>
-    </div>
+      <p>Žemėlapyje vaizduojamas kirtimų skaičius bei Molėtų ežeryno batimetrija.</p>
+      <iframe src="https://domas26.github.io/2_praktinis/" title="Žemėlapis 2"></iframe>
+    </section>
 
-    <!-- Žemėlapis 3 -->
-    <div class="map-container" id="map3" style="display: none;">
+    <section id="map3" class="map-section" style="display:none;">
       <h2>Žemėlapis 3</h2>
-      <p class="map-description">Žemėlapyje pateikiama gyventojų pasiūlymų ir problemų aplikacija</p>
+      <p>Žemėlapyje pateikiama gyventojų pasiūlymų ir problemų aplikacija.</p>
       <iframe src="https://domas26.github.io/3_praktinis/" title="Žemėlapis 3"></iframe>
-      <a href="https://domas26.github.io/3_praktinis/" target="_blank" class="btn">Peržiūrėti visame lange</a>
-    </div>
+    </section>
 
-    <!-- Kontaktai -->
-    <div class="map-container" id="contact" style="display: none;">
+    <section id="contact" class="map-section" style="display:none;">
       <h2>Kontaktai</h2>
-      <p>El. paštas: <a href="mailto:info@zemelapiai.lt">info@zemelapiai.lt</a></p>
-      <p>Tel.: +370 612 34567</p>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfD7-example-form-url/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Įkeliama…</iframe>
-    </div>
+      <p>Jeigu jums reikia pagalbos ar turite klausimų, užpildykite šią formą:</p>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdU6kE5nNgpWUvP_JikbHDaaV83MfH-GG5IfMnnROZbAqJlOQ/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Įkeliama…</iframe>
+      <p>Arba susisiekite el. paštu: <a href="mailto:pagalba@zemelapiai.lt">pagalba@zemelapiai.lt</a></p>
+      <p>Telefonas: +370 612 34567</p>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Žemėlapių svetainė. Visos teisės saugomos.</p>
+    <p>© 2025 Žemėlapių svetainė. Sukurta mokymosi tikslais.</p>
   </footer>
 
   <script>
-    function showMap(mapId) {
-      const sections = ['map1', 'map2', 'map3', 'contact'];
-      sections.forEach(id => {
-        document.getElementById(id).style.display = id === mapId ? 'block' : 'none';
-      });
+    function showSection(id) {
+      const sections = document.querySelectorAll('.map-section');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
     }
   </script>
+
+</body>
+</html>
 
 </body>
 </html>
