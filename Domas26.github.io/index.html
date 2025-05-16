@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Žemėlapių svetainė</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>Žemėlapių svetainė</h1>
+    <nav class="nav-buttons">
+      <button onclick="showSection('map1')">Žemėlapis 1</button>
+      <button onclick="showSection('map2')">Žemėlapis 2</button>
+      <button onclick="showSection('map3')">Žemėlapis 3</button>
+      <button onclick="showSection('contact')">Kontaktai</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="map1" class="map-section">
+      <h2>Žemėlapis 1</h2>
+      <p>Žemėlapyje vaizduojami 2023 padaryti eismo įvykiai bei gyventojų skaičius.</p>
+      <iframe src="https://domas26.github.io/1_praktinis/map_1.html" title="Žemėlapis 1"></iframe>
+    </section>
+
+    <section id="map2" class="map-section" style="display:none;">
+      <h2>Žemėlapis 2</h2>
+      <p>Žemėlapyje vaizduojamas kirtimų skaičius bei Molėtų ežeryno batimetrija.</p>
+      <iframe src="https://domas26.github.io/2_praktinis/" title="Žemėlapis 2"></iframe>
+    </section>
+
+    <section id="map3" class="map-section" style="display:none;">
+      <h2>Žemėlapis 3</h2>
+      <p>Žemėlapyje pateikiama gyventojų pasiūlymų ir problemų aplikacija.</p>
+      <iframe src="https://domas26.github.io/3_praktinis/" title="Žemėlapis 3"></iframe>
+    </section>
+
+    <section id="contact" class="map-section" style="display:none;">
+      <h2>Kontaktai</h2>
+      <p>Jeigu reikia pagalbos, užpildykite šią formą:</p>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdjjk_yG5TGg0se0mgMkaA1lHGsx0jk63VfqSAFoCxoHM5cZQ/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Įkeliama…</iframe>
+      <p>Arba susisiekite el. paštu: <a href="mailto:pagalba@zemelapiai.lt">pagalba@zemelapiai.lt</a></p>
+      <p>Telefonas: +370 612 34567</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Žemėlapių svetainė. Sukurta mokymosi tikslais.</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.map-section');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
