@@ -5,6 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Žemėlapių svetainė</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Preload fono paveikslėlį, kad būtų užkrautas anksčiau -->
+  <link rel="preload" as="image" href="https://i0.wp.com/talkinghumanities.blogs.sas.ac.uk/files/2020/04/Cartography.jpg?resize=1080%2C675&ssl=1" />
+  <!-- Inline papildomi stiliai -->
+  <style>
+    /* Optimizuotas fonas – be "fixed" (geresnis našumas mobiliajame) */
+    body {
+      background: url('https://i0.wp.com/talkinghumanities.blogs.sas.ac.uk/files/2020/04/Cartography.jpg?resize=1080%2C675&ssl=1') no-repeat center/cover;
+      margin: 0;
+      text-align: center;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    /* Konteineriai */
+    main, header.app-header, footer {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(2px);
+      border-radius: 0.5rem;
+      margin: 0.5rem auto;
+      padding: 0.5rem 1rem;
+      max-width: 1100px;
+    }
+
+    /* Svetainės pavadinimas juodas */
+    .app-header h1 { color:#000; }
+
+    /* Navigacija */
+    .nav-buttons { display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap; }
+    .nav-buttons button { padding:0.5rem 1rem; border:none; background:#0d6efd; color:#fff; border-radius:0.3rem; cursor:pointer; }
+    .nav-buttons button:hover { background:#0b5ed7; }
+
+    .about-card { background:#2d2d2d; color:#e5e7eb; padding:1rem 1.5rem; border-radius:0.5rem; margin-top:1.5rem; }
+    .about-card h3 { margin-top:0; color:#ffffff; }
+    .single-map { margin-bottom:2rem; }
+
+    /* Iframe */
+    .responsive-iframe { position:relative; padding-top:56.25%; }
+    .responsive-iframe iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+  </style>
 </head>
 <body>
 
@@ -19,38 +57,61 @@
   </header>
 
   <main>
+    <!-- Kompozicinė sekcija -->
     <section id="map1" class="map-section">
       <h2>Žemėlapis 1</h2>
-      <p>Žemėlapyje vaizduojami 2023 padaryti eismo įvykiai bei gyventojų skaičius.</p>
-      <div class="responsive-iframe">
-        <iframe src="https://domas26.github.io/1_praktinis/map_1.html" title="Žemėlapis 1"></iframe>
-      </div>
-      <a href="https://domas26.github.io/1_praktinis/map_1.html" target="_blank" class="open-btn">Atidaryti naujame lange</a>
+
+      <article class="single-map">
+        <p>Žemėlapyje vaizduojami 2023 padaryti eismo įvykiai bei gyventojų skaičius.</p>
+        <div class="responsive-iframe">
+          <iframe loading="lazy" src="https://domas26.github.io/1_praktinis/map_1.html" title="Žemėlapis 1 – eismo įvykiai"></iframe>
+        </div>
+      </article>
+
+      <article class="single-map">
+        <p>Žemėlapyje vaizduojamos religinės bendruomenės.</p>
+        <div class="responsive-iframe">
+          <iframe loading="lazy" src="https://domas26.github.io/1_praktinis/map_2.html" title="Žemėlapyje vaizduojamos religinės bendruomenės"></iframe>
+        </div>
+      </article>
+
+      <article class="single-map">
+        <p>Žemėlapyje vaizduojamos Lietuvos švietimo įstaigos bei muziejai.</p>
+        <div class="responsive-iframe">
+          <iframe loading="lazy" src="https://domas26.github.io/1_praktinis/Map_3.html" title="Žemėlapyje vaizduojamos Lietuvos švietimo įstaigos bei muziejai"></iframe>
+        </div>
+      </article>
     </section>
 
+    <!-- Atskiras Žemėlapis 2 -->
     <section id="map2" class="map-section" style="display:none;">
-
-      <iframe src="https://www.geoportal.lt/map/?mode=openMap#portalAction=openSavedMap&savedMapId=83627" title="Žemėlapis 2" style="width: 100%; height: 600px;"></iframe>
-      <a href="https://domas26.github.io/2_praktinis/" target="_blank" class="open-btn">Atidaryti naujame lange</a>
+      <h2>Žemėlapis 2</h2>
+      <div class="responsive-iframe">
+        <iframe loading="lazy" src="https://domas26.github.io/2_praktinis/" title="Žemėlapis 2"></iframe>
+      </div>
     </section>
 
+    <!-- Atskiras Žemėlapis 3 -->
     <section id="map3" class="map-section" style="display:none;">
       <h2>Žemėlapis 3</h2>
-      <p>Žemėlapyje pateikiama gyventojų pasiūlymų ir problemų aplikacija.</p>
       <div class="responsive-iframe">
-        <iframe src="https://domas26.github.io/3_praktinis/" title="Žemėlapis 3"></iframe>
+        <iframe loading="lazy" src="https://domas26.github.io/3_praktinis/" title="Žemėlapis 3"></iframe>
       </div>
-      <a href="https://domas26.github.io/3_praktinis/" target="_blank" class="open-btn">Atidaryti naujame lange</a>
     </section>
 
+    <!-- Kontaktai -->
     <section id="contact" class="map-section" style="display:none;">
       <h2>Kontaktai</h2>
       <p>Jeigu reikia pagalbos, užpildykite šią formą:</p>
       <div class="responsive-iframe">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdjjk_yG5TGg0se0mgMkaA1lHGsx0jk63VfqSAFoCxoHM5cZQ/viewform?embedded=true" title="Forma"></iframe>
+        <iframe loading="lazy" src="https://docs.google.com/forms/d/e/1FAIpQLSdjjk_yG5TGg0se0mgMkaA1lHGsx0jk63VfqSAFoCxoHM5cZQ/viewform?embedded=true" title="Forma"></iframe>
       </div>
-      <p>Arba susisiekite el. paštu: <a href="mailto:pagalba@zemelapiai.lt">pagalba@zemelapiai.lt</a></p>
-      <p>Telefonas: +370 612 34567</p>
+
+      <div class="about-card">
+        <h3>Apie svetainės kūrėją</h3>
+        <p>Svetainę sukūrė <strong>Domas Motiejūnas</strong>, VU CHGF geografijos III kurso studentas.</p>
+        <p>Ši svetainė buvo sukurta kaip 4 praktinė užduotis, pridedant žemėlapius iš kepler.gl, geoportal.lt ir ArcGIS Online aplinkos.</p>
+      </div>
     </section>
   </main>
 
@@ -59,10 +120,10 @@
   </footer>
 
   <script>
+    /* Naudojame display keitimą be papildomo brangaus DOM perskaičiavimo */
+    const sections = document.querySelectorAll('.map-section');
     function showSection(id) {
-      const sections = document.querySelectorAll('.map-section');
-      sections.forEach(section => section.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
+      sections.forEach(sec => sec.style.display = (sec.id === id) ? 'block' : 'none');
     }
   </script>
 
